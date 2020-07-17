@@ -2,6 +2,7 @@ import React from "react";
 import {StyleSheet, SafeAreaView, FlatList} from "react-native";
 
 import MangaPicker from "./../components/MangaPicker";
+import colours from "../config/colours";
 
 export default function Favorites({data}) {
   return (
@@ -26,6 +27,6 @@ export default function Favorites({data}) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#232123",
+    backgroundColor: colours.primary,
   },
 });
