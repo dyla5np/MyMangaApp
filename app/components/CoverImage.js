@@ -11,27 +11,20 @@ import colours from "../config/colours";
 import MangaName from "./form/MangaName";
 
 import {MaterialCommunityIcons} from "@expo/vector-icons";
+import IconButton from "./IconButton";
 
 export default function CoverImage({image, mangaName, onPress}) {
   return (
     <View style={styles.container}>
-      {/* <TouchableOpacity style={{zIndex: 1}}> */}
-      <MaterialCommunityIcons
-        name='keyboard-backspace'
-        size={30}
-        color='white'
-        style={styles.backIcon}
-        onPress={onPress}
-      />
-      <MaterialCommunityIcons
-        name='download-outline'
-        size={30}
-        color='white'
-        style={styles.downloadIcon}
-      />
-      {/* </TouchableOpacity> */}
+      <TouchableOpacity style={{zIndex: 1}} onPress={onPress}>
+        <IconButton
+          name='keyboard-backspace'
+          size={30}
+          style={{top: 50, left: 20}}
+        />
+      </TouchableOpacity>
       <ImageBackground source={image} style={styles.image} />
-      <MangaName label={mangaName} />
+      <MangaName label={mangaName} style={{top: 250, right: 50}} />
     </View>
   );
 }
@@ -40,22 +33,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 0.5,
     backgroundColor: colours.primary,
+    flexDirection: "row",
   },
   image: {
     zIndex: 0,
     width: "100%",
-    height: 275,
-  },
-  backIcon: {
+    height: 250,
     position: "absolute",
-    zIndex: 1,
-    top: 50,
-    left: 30,
-  },
-  downloadIcon: {
-    position: "absolute",
-    zIndex: 1,
-    top: 50,
-    right: 30,
   },
 });
