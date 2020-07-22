@@ -23,41 +23,17 @@ export default function CoverImage({image, mangaName, onPress}) {
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity
-        style={{
-          zIndex: 1,
-          width: 50,
-          height: 50,
-          top: 70,
-          left: 20,
-          position: "absolute",
-        }}>
+      <TouchableOpacity style={styles.iconButtonCover} onPress={onPress}>
         <IconButton
           name='keyboard-backspace'
           size={30}
           style={{position: "absolute"}}
-          onPress={onPress}
         />
       </TouchableOpacity>
       <ImageBackground source={image} style={styles.image} />
-      <View
-        style={{
-          flexDirection: "row",
-          width: "100%",
-          height: 40,
-          alignItems: "center",
-          justifyContent: "space-between",
-          top: 250,
-        }}>
+      <View style={styles.header}>
         <MangaName label={mangaName} />
-        <View
-          style={{
-            flexDirection: "row",
-            justifyContent: "space-between",
-            width: "20%",
-            marginRight: 20,
-            top: 5,
-          }}>
+        <View style={styles.favorites}>
           {!name ? (
             <Icon name='heart-outline' onPress={nameToggle} />
           ) : (
@@ -85,5 +61,28 @@ const styles = StyleSheet.create({
     width: "100%",
     height: 250,
     position: "absolute",
+  },
+  iconButtonCover: {
+    zIndex: 1,
+    width: 50,
+    height: 50,
+    top: 70,
+    left: 20,
+    position: "absolute",
+  },
+  header: {
+    flexDirection: "row",
+    width: "100%",
+    height: 40,
+    alignItems: "center",
+    justifyContent: "space-between",
+    top: 250,
+  },
+  favorites: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    width: "20%",
+    marginRight: 20,
+    top: 5,
   },
 });
