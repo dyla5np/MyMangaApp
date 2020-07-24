@@ -28,7 +28,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "flex-start",
-    paddingTop: 60,
   },
   images: {
     width: 200,
