@@ -9,14 +9,14 @@ import {
 import MangaName from "./form/MangaName";
 import Author from "./form/Author";
 
-export default function MangaPicker({image, onPress, name, author}) {
+export default function MangaPicker({image, onPress, name, author, style}) {
   return (
     <SafeAreaView>
       <View>
         <TouchableOpacity onPress={onPress} style={styles.container}>
           <Image source={image} style={styles.images} />
-          <MangaName label={name} />
-          <Author label={author} />
+          <MangaName label={name} style={{paddingLeft: 15}} />
+          <Author label={author} style={{padding: 10}} />
         </TouchableOpacity>
       </View>
     </SafeAreaView>

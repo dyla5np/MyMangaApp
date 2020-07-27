@@ -32,7 +32,7 @@ export default function CoverImage({image, mangaName, onPress}) {
       </TouchableOpacity>
       <ImageBackground source={image} style={styles.image} />
       <View style={styles.header}>
-        <MangaName label={mangaName} />
+        <MangaName label={mangaName} style={{paddingLeft: 20}} />
         <View style={styles.favorites}>
           {!name ? (
             <Icon name='heart-outline' onPress={nameToggle} />
