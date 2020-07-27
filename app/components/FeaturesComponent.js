@@ -9,8 +9,11 @@ import {
 } from "react-native";
 import MangaName from "./form/MangaName";
 import Author from "./form/Author";
+import {useNavigation} from "@react-navigation/native";
 
-export default function FeaturesComponent({data, navigation}) {
+export default function FeaturesComponent({data}) {
+  const navigation = useNavigation();
+
   return (
     <FlatList
       data={data}
