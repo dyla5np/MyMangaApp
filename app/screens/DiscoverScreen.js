@@ -12,9 +12,9 @@ import {
 } from "react-native";
 import colours from "../config/colours";
 import Header from "../components/Header";
-import MangaPicker from "./../components/MangaPicker";
+import MangaPicker from "../components/MangaPicker";
 import MangaName from "../components/form/MangaName";
-import Author from "./../components/form/Author";
+import Author from "../components/form/Author";
 import FeaturesComponent from "../components/FeaturesComponent";
 
 const manga = [

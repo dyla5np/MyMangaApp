@@ -9,7 +9,7 @@ import MangaPicker from "./app/components/MangaPicker";
 import Favorites from "./app/screens/FavoriteScreen";
 import PickedManga from "./app/screens/PickedManga";
 import MangaNavigator from "./app/navigation/MangaNavigator";
-import HomeScreen from "./app/screens/HomeScreen";
+import DiscoverScreen from "./app/screens/DiscoverScreen";
 
 export default function App() {
   return (
