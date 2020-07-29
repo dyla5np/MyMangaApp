@@ -66,10 +66,7 @@ export default function HomeScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.features}>
-        <Header title='Features' />
-        <View style={{flexDirection: "row"}}>
-          <FeaturesComponent data={manga} />
-        </View>
+        <FeaturesComponent data={manga} />
       </View>
     </SafeAreaView>
   );

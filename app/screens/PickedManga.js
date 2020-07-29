@@ -8,24 +8,7 @@ import CoverImage from "../components/CoverImage";
 import Chapters from "./tabs/Chapters";
 import Description from "./tabs/Description";
 import colours from "../config/colours";
-
-const Tab = createMaterialTopTabNavigator();
-
-const TabNavigator = () => {
-  return (
-    <Tab.Navigator
-      tabBarOptions={{
-        style: {backgroundColor: colours.primary},
-        labelStyle: {color: colours.text, fontWeight: "bold"},
-        indicatorStyle: {
-          backgroundColor: colours.text,
-        },
-      }}>
-      <Tab.Screen name='Description' component={Description} />
-      <Tab.Screen name='Chapters' component={Chapters} />
-    </Tab.Navigator>
-  );
-};
+import TabNavigator from "./../navigation/TabNavigator";
 
 export default function PickedManga({navigation}) {
   const route = useRoute();
