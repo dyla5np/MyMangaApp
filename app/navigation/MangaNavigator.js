@@ -16,10 +16,18 @@ const Tab = createMaterialBottomTabNavigator();
 
 const StackNavigator = () => {
   return (
-    <Stack.Navigator headerMode='none' mode='modal'>
-      <Stack.Screen name='Discover' component={DiscoverScreen} />
+    <Stack.Navigator mode='modal'>
+      <Stack.Screen
+        name='Discover'
+        component={DiscoverScreen}
+        options={{headerShown: false}}
+      />
       <Stack.Screen name='Favorites' component={Favorites} />
-      <Stack.Screen name='Picked Manga' component={PickedManga} />
+      <Stack.Screen
+        name='Picked Manga'
+        component={PickedManga}
+        options={{headerShown: false}}
+      />
     </Stack.Navigator>
   );
 };

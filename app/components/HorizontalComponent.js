@@ -12,11 +12,11 @@ import Author from "./form/Author";
 import {useNavigation} from "@react-navigation/native";
 import Header from "./Header";
 
-export default function FeaturesComponent({data, name}) {
+export default function FeaturesComponent({data, name, style}) {
   const navigation = useNavigation();
 
   return (
-    <>
+    <View style={[styles.container, style]}>
       <Header title={name} />
       <View style={{flexDirection: "row"}}>
         <FlatList
@@ -41,11 +41,16 @@ export default function FeaturesComponent({data, name}) {
           )}
         />
       </View>
-    </>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    width: "100%",
+    padding: 10,
+  },
   image: {
     width: 250,
     height: 150,

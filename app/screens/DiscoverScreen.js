@@ -64,16 +64,12 @@ const manga = [
 
 export default function HomeScreen() {
   return (
-    <ScrollView>
-      <SafeAreaView style={styles.container}>
-        <View style={styles.features}>
-          <HorizontalComponent data={manga} name={"Features"} />
-        </View>
-        <View style={styles.updates}>
-          <HorizontalComponent data={manga} name={"Updates"} />
-        </View>
-      </SafeAreaView>
-    </ScrollView>
+    <SafeAreaView style={styles.container}>
+      <HorizontalComponent data={manga} name={"Features"} style={{top: 50}} />
+      <HorizontalComponent data={manga} name={"Updates"} />
+    </SafeAreaView>
+    // <ScrollView>
+    // </ScrollView>
   );
 }
 
@@ -84,19 +80,5 @@ const styles = StyleSheet.create({
     alignItems: "center",
     flexDirection: "column",
     backgroundColor: colours.primary,
-  },
-  features: {
-    flex: 1,
-    width: "100%",
-    padding: 10,
-    top: 50,
-    backgroundColor: "green",
-  },
-  updates: {
-    flex: 1,
-    width: "100%",
-    padding: 10,
-    backgroundColor: "red",
-    top: 50,
   },
 });
