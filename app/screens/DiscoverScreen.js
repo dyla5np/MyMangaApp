@@ -15,7 +15,7 @@ import Header from "../components/Header";
 import MangaPicker from "../components/MangaPicker";
 import MangaName from "../components/form/MangaName";
 import Author from "../components/form/Author";
-import FeaturesComponent from "../components/FeaturesComponent";
+import HorizontalComponent from "../components/HorizontalComponent";
 
 const manga = [
   {
@@ -64,11 +64,16 @@ const manga = [
 
 export default function HomeScreen() {
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.features}>
-        <FeaturesComponent data={manga} />
-      </View>
-    </SafeAreaView>
+    <ScrollView>
+      <SafeAreaView style={styles.container}>
+        <View style={styles.features}>
+          <HorizontalComponent data={manga} name={"Features"} />
+        </View>
+        <View style={styles.updates}>
+          <HorizontalComponent data={manga} name={"Updates"} />
+        </View>
+      </SafeAreaView>
+    </ScrollView>
   );
 }
 
@@ -81,10 +86,17 @@ const styles = StyleSheet.create({
     backgroundColor: colours.primary,
   },
   features: {
-    flex: 0.3,
-    // backgroundColor: "red",
+    flex: 1,
     width: "100%",
     padding: 10,
+    top: 50,
+    backgroundColor: "green",
+  },
+  updates: {
+    flex: 1,
+    width: "100%",
+    padding: 10,
+    backgroundColor: "red",
     top: 50,
   },
 });

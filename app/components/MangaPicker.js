@@ -12,11 +12,11 @@ import Author from "./form/Author";
 export default function MangaPicker({image, onPress, name, author, style}) {
   return (
     <SafeAreaView>
-      <View>
+      <View style={{marginLeft: 5}}>
         <TouchableOpacity onPress={onPress} style={styles.container}>
           <Image source={image} style={styles.images} />
-          <MangaName label={name} style={{paddingLeft: 15}} />
-          <Author label={author} style={{padding: 10}} />
+          <MangaName label={name} style={{paddingLeft: 20}} />
+          <Author label={author} style={{padding: 15}} />
         </TouchableOpacity>
       </View>
     </SafeAreaView>
@@ -33,5 +33,7 @@ const styles = StyleSheet.create({
     width: 200,
     height: 250,
     resizeMode: "contain",
+    borderRadius: 5,
+    overflow: "hidden",
   },
 });

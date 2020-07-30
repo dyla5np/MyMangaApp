@@ -10,14 +10,14 @@ import {
 import MangaName from "./form/MangaName";
 import Author from "./form/Author";
 import {useNavigation} from "@react-navigation/native";
-import Header from "../components/Header";
+import Header from "./Header";
 
-export default function FeaturesComponent({data}) {
+export default function FeaturesComponent({data, name}) {
   const navigation = useNavigation();
 
   return (
     <>
-      <Header title='Features' />
+      <Header title={name} />
       <View style={{flexDirection: "row"}}>
         <FlatList
           data={data}
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
   image: {
     width: 250,
     height: 150,
-    borderRadius: 15,
+    borderRadius: 5,
     overflow: "hidden",
     marginRight: 10,
     marginTop: 10,
