@@ -7,6 +7,9 @@ export default function VerticalComponent({style}) {
   return (
     <View style={(styles.container, style)}>
       <Header title={"new"} />
+      <View style={styles.manga}>
+        <Text style={{color: "#fff"}}>Hello</Text>
+      </View>
     </View>
   );
 }
@@ -15,7 +18,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colours.primary,
-    justifyContent: "center",
-    alignItems: "center",
+    padding: 10,
+  },
+  manga: {
+    width: "100%",
+    height: 200,
+    backgroundColor: colours.darkgray,
+    padding: 10,
+    borderRadius: 15,
   },
 });

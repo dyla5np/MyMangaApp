@@ -15,9 +15,8 @@ import VerticalComponent from "./app/components/VerticalComponent";
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      {/* <HomeScreen /> */}
-      {/* <MangaNavigator /> */}
-      <VerticalComponent />
+      <MangaNavigator />
+      {/* <VerticalComponent /> */}
     </SafeAreaView>
   );
 }
