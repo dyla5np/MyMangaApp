@@ -18,6 +18,7 @@ import MangaName from "../components/form/MangaName";
 import Author from "../components/form/Author";
 import HorizontalComponent from "../components/HorizontalComponent";
 import VerticalComponent from "../components/VerticalComponent";
+import Card from "../components/Card";
 
 const manga = [
   {
@@ -67,30 +68,18 @@ const manga = [
 export default function HomeScreen() {
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView>
+      <ScrollView nestedScrollEnabled>
         <HorizontalComponent
           data={manga}
           name={"Features"}
-          style={{backgroundColor: "red", marginTop: 50}}
+          style={{marginTop: 50}}
         />
         <HorizontalComponent
           data={manga}
           name={"Updates"}
-          style={{backgroundColor: "blue"}}
+          // style={{backgroundColor: "blue"}}
         />
-        <View style={styles.new}>
-          <Header title={"New"} />
-          <View style={styles.manga}>
-            <Image
-              source={require("../../assets/manga-images/bleach.jpg")}
-              style={styles.image}
-            />
-            <View style={styles.label}>
-              <MangaName label={"Bleach"} />
-              <Author label={"Tite Kubo"} />
-            </View>
-          </View>
-        </View>
+        <VerticalComponent data={manga} />
       </ScrollView>
     </SafeAreaView>
   );
@@ -103,30 +92,5 @@ const styles = StyleSheet.create({
     alignItems: "center",
     flexDirection: "column",
     backgroundColor: colours.primary,
-  },
-  new: {
-    flex: 1,
-    padding: 5,
-    backgroundColor: "green",
-  },
-  manga: {
-    width: "100%",
-    height: 200,
-    backgroundColor: colours.darkgray,
-    borderRadius: 15,
-    marginTop: 5,
-    flexDirection: "row",
-    padding: 5,
-  },
-  image: {
-    width: "40%",
-    height: 190,
-    borderRadius: 15,
-  },
-  label: {
-    padding: 10,
-    marginLeft: 5,
-    justifyContent: "flex-end",
-    // backgroundColor: "blue",
   },
 });
