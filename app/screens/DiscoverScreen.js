@@ -79,7 +79,7 @@ export default function HomeScreen() {
           name={"Updates"}
           // style={{backgroundColor: "blue"}}
         />
-        <VerticalComponent data={manga} />
+        <VerticalComponent data={manga} itemShown={3} />
       </ScrollView>
     </SafeAreaView>
   );
