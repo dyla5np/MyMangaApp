@@ -1,23 +1,26 @@
 import React from "react";
-import {StyleSheet, Text, View} from "react-native";
+import {StyleSheet, Text, View, TouchableOpacity} from "react-native";
 import colours from "../config/colours";
 import Header from "./Header";
 import Card from "./Card";
+import SectionScreen from "./../screens/SectionScreen";
+import {MaterialCommunityIcons} from "@expo/vector-icons";
+import SectionHeader from "./SectionHeader";
 
-export default function VerticalComponent({style, data, itemShown}) {
+export default function VerticalComponent({
+  style,
+  data,
+  title,
+  itemShown = data.length,
+}) {
   return (
     <View style={[styles.container, style]}>
-      <Header title={"New"} style={{marginLeft: 5}} />
-      {data.slice(0, itemShown).map((item, i) => {
-        return (
-          <Card
-            image={item.image}
-            mangaName={item.name}
-            author={item.author}
-            key={i}
-          />
-        );
-      })}
+      <SectionHeader
+        title={title}
+        iconName={"arrow-right"}
+        style={{marginLeft: 10, marginRight: 10, top: 5}}
+      />
+      <SectionScreen itemShown={itemShown} />
     </View>
   );
 }
@@ -25,7 +28,5 @@ export default function VerticalComponent({style, data, itemShown}) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 5,
-    // backgroundColor: "green",
   },
 });

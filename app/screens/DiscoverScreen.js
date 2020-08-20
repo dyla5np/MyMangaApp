@@ -1,24 +1,15 @@
 import React from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  SafeAreaView,
-  ImageBackground,
-  TouchableWithoutFeedback,
-  ScrollView,
-  FlatList,
-  TouchableOpacity,
-  Image,
-} from "react-native";
+import {StyleSheet, SafeAreaView, ScrollView} from "react-native";
 import colours from "../config/colours";
 import Header from "../components/Header";
 import MangaPicker from "../components/MangaPicker";
 import MangaName from "../components/form/MangaName";
 import Author from "../components/form/Author";
+import Card from "../components/Card";
+import SectionScreen from "./SectionScreen";
 import HorizontalComponent from "../components/HorizontalComponent";
 import VerticalComponent from "../components/VerticalComponent";
-import Card from "../components/Card";
+import Constants from "expo-constants";
 
 const manga = [
   {
@@ -68,18 +59,14 @@ const manga = [
 export default function HomeScreen() {
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView nestedScrollEnabled>
+      <ScrollView>
         <HorizontalComponent
           data={manga}
           name={"Features"}
-          style={{marginTop: 50}}
+          style={{marginTop: Constants.statusBarHeight}}
         />
-        <HorizontalComponent
-          data={manga}
-          name={"Updates"}
-          // style={{backgroundColor: "blue"}}
-        />
-        <VerticalComponent data={manga} itemShown={3} />
+        <HorizontalComponent data={manga} name={"Updates"} />
+        <VerticalComponent title={"New"} itemShown={3} />
       </ScrollView>
     </SafeAreaView>
   );

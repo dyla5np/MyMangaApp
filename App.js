@@ -10,13 +10,11 @@ import Favorites from "./app/screens/FavoriteScreen";
 import PickedManga from "./app/screens/PickedManga";
 import MangaNavigator from "./app/navigation/MangaNavigator";
 import DiscoverScreen from "./app/screens/DiscoverScreen";
-import VerticalComponent from "./app/components/VerticalComponent";
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <MangaNavigator />
-      {/* <VerticalComponent /> */}
     </SafeAreaView>
   );
 }

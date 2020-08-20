@@ -9,16 +9,17 @@ import {
 } from "react-native";
 
 import {useNavigation} from "@react-navigation/native";
-import MangaName from "./form/MangaName";
-import Author from "./form/Author";
-import Header from "./Header";
-import SectionHeader from "./SectionHeader";
+import MangaName from "../components/form/MangaName";
+import Author from "../components/form/Author";
+import Header from "../components/Header";
+import SectionHeader from "../components/SectionHeader";
 
-export default function HorizontalComponent({data, name, style}) {
+export default function FeaturesComponent({data, name, style}) {
   const navigation = useNavigation();
 
   return (
     <View style={[styles.container, style]}>
+      {/* <Header title={name} /> */}
       <SectionHeader title={name} iconName={"arrow-right"} />
       <View style={{flexDirection: "row"}}>
         <FlatList
